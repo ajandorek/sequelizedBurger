@@ -8,7 +8,9 @@ module.exports = function(app) {
     });
 
     app.post("/api/burger", function(req, res){
-        db.Burger.create(req.body).then(function(dbPost){
+        db.Burger.create({
+            burger_name: req.body.burger_name
+        }).then(function(dbPost){
             res.json(dbPost);
         });
     });
