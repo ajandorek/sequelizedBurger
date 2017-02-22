@@ -1,10 +1,8 @@
 var db = require("../models");
-console.log("hi");
 
 module.exports = function (app) {
     app.get("/api/burger", function (req, res) {
-        console.log("hello");
-        db.burger.findAll({}).then(function (dbPost) {
+        db.burger.findAll().then(function (dbPost) {
             res.json(dbPost);
         });
     });
@@ -12,7 +10,7 @@ module.exports = function (app) {
     app.post("/api/burger", function (req, res) {
         console.log("Hello");
         db.burger.create(req.body).then(function (dbPost) {
-            res.json(dbPost);
+            res.redirect("/");
         });
     });
 
