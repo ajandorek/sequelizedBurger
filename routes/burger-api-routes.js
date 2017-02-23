@@ -18,7 +18,7 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/api/burger", function (req, res) {
+    app.put("/api/burger/:id", function (req, res) {
         console.log("hi");
         db.burger.update({
             devoured: true
@@ -27,8 +27,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
             }).then(function (dbPost) {
-                console.log("hello");
-                res.json(dbPost);
+                res.redirect("/");
             });
     });
 };

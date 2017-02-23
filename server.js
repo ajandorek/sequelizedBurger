@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 var PORT = process.env.PORT || 3005;
 console.log(PORT);
@@ -14,6 +15,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
+
+app.use(methodOverride("_method"));
 
 require("./routes/burger-api-routes.js")(app);
 require("./routes/handlebar-routes.js")(app);
