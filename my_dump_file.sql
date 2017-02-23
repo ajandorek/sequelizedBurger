@@ -24,11 +24,12 @@ DROP TABLE IF EXISTS `burgers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `burgers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `burger_name` varchar(255) NOT NULL,
+  `burger_name` varchar(255) DEFAULT NULL,
   `devoured` tinyint(1) DEFAULT '0',
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `burgers` (
 
 LOCK TABLES `burgers` WRITE;
 /*!40000 ALTER TABLE `burgers` DISABLE KEYS */;
-INSERT INTO `burgers` VALUES (8,'The Best Burger',1,'2017-02-16 04:52:16');
+INSERT INTO `burgers` VALUES (1,'her',0,'2017-02-23 20:30:59','2017-02-23 20:30:59');
 /*!40000 ALTER TABLE `burgers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-15 23:02:03
+-- Dump completed on 2017-02-23 14:38:39
