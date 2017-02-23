@@ -18,13 +18,13 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/api/burger/:id", function (req, res) {
+    app.put("/api/burger", function (req, res) {
         console.log("hi");
         db.burger.update({
-            devoured: req.body
+            devoured: true
         }, {
             where: {
-                id: req.body.id
+                id: req.params.id
             }
             }).then(function (dbPost) {
                 console.log("hello");
